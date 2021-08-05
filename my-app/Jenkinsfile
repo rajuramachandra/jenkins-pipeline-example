@@ -11,6 +11,11 @@ pipeline {
                 echo "M2_HOME = /opt/maven"
             }
         }
+        stage('Git Checkout'){
+            steps {
+                git url: 'https://github.com/rajuramachandra/jenkins-pipeline-example.git'
+            }
+        }
         stage('Build') {
             steps {
                 dir("/var/lib/jenkins/workspace/pipeline/my-app/") {
